@@ -1,4 +1,4 @@
-const users = ['jacotton', 'stephenrdoyle', 'susefranssen', 'adamjamesreid'];
+const users = ['jacotton', 'stephenrdoyle', 'susefranssen', 'adamjamesreid', 'avrilcoghlan'];
 //when data_back is all true I know I have finished with API calls
 const data_back = [];
 for (const u of users) {
