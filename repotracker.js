@@ -4,6 +4,13 @@ const data_back = [];
 for (const u of users) {
     data_back.push(false);
 }
+
+const colors = [];
+let startingHue = parseInt(Math.random() * 360);
+let gap_between = parseInt(360 / users.length + 1);
+for (let i = 0; i != users.length; i++) {
+    colors[i] = `hsl(${i * gap_between % 360},40%, 80%)`;
+}
 //will have a set of output objects to display
 const repoData = [];
 
@@ -23,6 +30,7 @@ for (let i = 0; i != users.length; i++) {
                 console.log(a);
                 const repoObj = {
                     owner: user,
+                    owner_num: i,
                     ownerURL: a.owner.url,
                     avatarURL: a.owner.avatar_url,
                     name: a.full_name,
@@ -57,6 +65,7 @@ let myTimer = setInterval(() => {
         //make LIs
         for (let a of repoData) {
             newRow = document.createElement("tr");
+            newRow.style.backgroundColor = colors[a.owner_num];
             tdOwner = document.createElement("td");
             tdName = document.createElement("td");
             tdDate = document.createElement("td");
