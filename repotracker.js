@@ -51,6 +51,7 @@ let myTimer = setInterval(() => {
     if (data_back.every((x) => { return x; })) {
         console.log("got everything");
         clearInterval(myTimer);
+        clearTimeout(myTimeOut);
         //sort list
         repoData.sort((a, b) => { return b.upDate - a.upDate })
         //make LIs
@@ -79,9 +80,9 @@ let myTimer = setInterval(() => {
 }, 100)
 
 let myTimeOut = setTimeout(() => {
-    console.log("timeout on API after 10 secs");
+    console.log("timeout on API after 20 secs");
     alertModal.classList.toggle("is-active");
 
     clearTimeout(myTimeOut);
     clearInterval(myTimer);
-}, 10000);
+}, 20000);
