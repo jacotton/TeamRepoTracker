@@ -9,7 +9,7 @@ const colors = [];
 let startingHue = parseInt(Math.random() * 360);
 let gap_between = parseInt(360 / users.length + 1);
 for (let i = 0; i != users.length; i++) {
-    colors[i] = `hsl(${i * gap_between % 360},40%, 80%)`;
+    colors[i] = `hsl(${(startingHue + (i * gap_between)) % 360},40%, 80%)`;
 }
 //will have a set of output objects to display
 const repoData = [];
